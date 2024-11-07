@@ -30,6 +30,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Core" Type="Folder">
 			<Item Name="AbstractActorTemplate.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/AbstractActorTemplate/AbstractActorTemplate/AbstractActorTemplate.lvlib"/>
+			<Item Name="JKI_Network_Streams.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/Network_Streams_Connection/JKI_Network_Streams.lvlib"/>
 		</Item>
 		<Item Name="Interface" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">0</Property>
@@ -51,6 +52,8 @@
 		<Item Name="CheckPasswordUI.lvclass" Type="LVClass" URL="../../_CheckPasswordUI/CheckPasswordUI.lvclass"/>
 		<Item Name="UI_Left_Right.lvclass" Type="LVClass" URL="../../_UI_Left_Right/UI_Left_Right.lvclass"/>
 		<Item Name="UI_Up_Down.lvclass" Type="LVClass" URL="../../_UI_Up_Down/UI_Up_Down.lvclass"/>
+		<Item Name="Model_AMC.lvclass" Type="LVClass" URL="../../_Model_AMC/Model_AMC.lvclass"/>
+		<Item Name="Model.lvlib" Type="Library" URL="../../_Model_AMC000/Model.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
@@ -133,15 +136,72 @@
 				<Item Name="Base64 Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Base64/Base64 Support.lvlib"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
-				<Item Name="SQLite.lvlib" Type="Library" URL="/&lt;vilib&gt;/drjdpowell/SQLite Library/SQLite.lvlib"/>
 				<Item Name="NI_Database_API.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/database/NI_Database_API.lvlib"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
-				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
-				<Item Name="Command Line String To Path.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Command Line String To Path.vi"/>
 				<Item Name="Stall Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Stall Data Flow.vim"/>
-				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
-				<Item Name="UNIXPathStringToPath.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/UNIXPathStringToPath.vi"/>
+				<Item Name="Subscription Data Change.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Subscription Data Change.ctl"/>
+				<Item Name="NodeId.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/NodeId.ctl"/>
+				<Item Name="Data Type.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Data Type.ctl"/>
+				<Item Name="OPC UA StatusCode.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/OPC UA StatusCode.ctl"/>
+				<Item Name="OPC UA Client Refnum.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/OPC UA Client Refnum.ctl"/>
+				<Item Name="Subscription ID.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Subscription ID.ctl"/>
+				<Item Name="Node Class.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Node Class.ctl"/>
+				<Item Name="NodeIds.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/NodeIds.ctl"/>
+				<Item Name="NI OPC UA Client.lvlib" Type="Library" URL="/&lt;vilib&gt;/OPCUA/NI OPC UA Client.lvlib"/>
+				<Item Name="Time Out.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Time Out.ctl"/>
+				<Item Name="ni_opcua.dll" Type="Document" URL="/&lt;vilib&gt;/OPCUA/ni_opcua.dll"/>
+				<Item Name="Read Variant Result.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Read Variant Result.ctl"/>
+				<Item Name="Verify Variant Type.vi" Type="VI" URL="/&lt;vilib&gt;/OPCUA/utilities/Verify Variant Type.vi"/>
+				<Item Name="Get Cert AbsPath.vi" Type="VI" URL="/&lt;vilib&gt;/OPCUA/server/subVI/Get Cert AbsPath.vi"/>
+				<Item Name="NI OPC UA Utility.lvlib" Type="Library" URL="/&lt;vilib&gt;/OPCUA/NI OPC UA Utility.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="Read Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet.vi"/>
+				<Item Name="Read Delimited Spreadsheet (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (DBL).vi"/>
+				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Lines From File (with error IO).vi"/>
+				<Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
+				<Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
+				<Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
+				<Item Name="Close File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Close File+.vi"/>
+				<Item Name="Find First Error.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find First Error.vi"/>
+				<Item Name="Read Delimited Spreadsheet (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (I64).vi"/>
+				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
+				<Item Name="Write Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Delimited Spreadsheet.vi"/>
+				<Item Name="Write Delimited Spreadsheet (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Delimited Spreadsheet (DBL).vi"/>
+				<Item Name="Write Spreadsheet String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Spreadsheet String.vi"/>
+				<Item Name="Write Delimited Spreadsheet (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Delimited Spreadsheet (I64).vi"/>
+				<Item Name="Write Delimited Spreadsheet (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Delimited Spreadsheet (string).vi"/>
+				<Item Name="Write Variant Request.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Write Variant Request.ctl"/>
+				<Item Name="Write Status.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Write Status.ctl"/>
+				<Item Name="Write Variant Result.ctl" Type="VI" URL="/&lt;vilib&gt;/OPCUA/controls/Write Variant Result.ctl"/>
+				<Item Name="Get File System Separator.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysinfo.llb/Get File System Separator.vi"/>
+				<Item Name="Has LLB Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Has LLB Extension.vi"/>
+				<Item Name="Get VI Library File Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get VI Library File Info.vi"/>
+				<Item Name="Librarian File Info Out.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File Info Out.ctl"/>
+				<Item Name="Librarian.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian.vi"/>
+				<Item Name="Librarian File Info In.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File Info In.ctl"/>
+				<Item Name="Librarian File List.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File List.ctl"/>
+				<Item Name="Librarian Get Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian Get Info.vi"/>
+				<Item Name="Librarian Path Location.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian Path Location.vi"/>
+				<Item Name="Is Path and Not Empty.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Is Path and Not Empty.vi"/>
+				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
+				<Item Name="Librarian Set Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian Set Info.vi"/>
+				<Item Name="Set VI Library File Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Set VI Library File Info.vi"/>
+				<Item Name="Get LV Class Default Value By Name.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Default Value By Name.vi"/>
+				<Item Name="LV70DateRecToTimeStamp.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/LV70DateRecToTimeStamp.vi"/>
+				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
+				<Item Name="Qualified Name Array To Single String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Qualified Name Array To Single String.vi"/>
+				<Item Name="NotifyIcon.lvlib" Type="Library" URL="/&lt;vilib&gt;/Averna/Notify Icon/NotifyIcon.llb/NotifyIcon.lvlib"/>
+				<Item Name="Flush And Wait Empty Condition.ctl" Type="VI" URL="/&lt;vilib&gt;/dex/Flush And Wait Empty Condition.ctl"/>
+				<Item Name="NI_FTP.lvlib" Type="Library" URL="/&lt;vilib&gt;/FTP/NI_FTP.lvlib"/>
+				<Item Name="LV70U32ToDateRec.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/LV70U32ToDateRec.vi"/>
+				<Item Name="compatCalcOffset.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatCalcOffset.vi"/>
+				<Item Name="compatFileDialog.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatFileDialog.vi"/>
+				<Item Name="compatWriteText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatWriteText.vi"/>
+				<Item Name="Is Value Changed.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Is Value Changed.vim"/>
+				<Item Name="LVStringsAndValuesArrayTypeDef_U16.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVStringsAndValuesArrayTypeDef_U16.ctl"/>
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
+				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 			</Item>
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Get All Control Ref.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Control/Get All Control Ref.vi"/>
@@ -156,12 +216,79 @@
 				<Item Name="Queue_Self.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/Queue_Self/Queue_Self.lvlib"/>
 				<Item Name="Save Front panel to Image.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/File/Save Front panel to Image.vi"/>
 				<Item Name="Start Window Drag.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Windows/Start Window Drag.vi"/>
-				<Item Name="Current VIs Parents Ref__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Current VIs Parents Ref__ogtk.vi"/>
 				<Item Name="JSON Pretty Printer.lvlib" Type="Library" URL="/&lt;userlib&gt;/FTools/JSON Pretty Printer/JSON Pretty Printer.lvlib"/>
 				<Item Name="DataBase_SQL.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/DataBase_SQL/DataBase_SQL.lvclass"/>
 				<Item Name="SQLite_API.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/SQLite_API/SQLite_API.lvclass"/>
 				<Item Name="StringToArray_Sushu.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/StringToArray_Sushu.vi"/>
 				<Item Name="Boolean Array to String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Boolean/Boolean Array to String.vi"/>
+				<Item Name="OPCUA.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/OPCUA/OPCUA.lvlib"/>
+				<Item Name="File RW.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/File/File RW.lvlib"/>
+				<Item Name="DBL to String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/DBL to String.vi"/>
+				<Item Name="Input Data to Array.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/Input Data to Array.vi"/>
+				<Item Name="SQLite_API_EOL.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/SQLite_API_EOL/SQLite_API_EOL.lvlib"/>
+				<Item Name="drjdpowell SQLite.lvlibp" Type="LVLibp" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp">
+					<Item Name="LV" Type="Folder">
+						<Item Name="Error Cluster From Error Code_John.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/LV/Error Cluster From Error Code_John.vi"/>
+					</Item>
+					<Item Name="Backup API" Type="Folder">
+						<Item Name="Backup to File with Progress Bar Dialog.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Backup/Backup to File with Progress Bar Dialog.vi"/>
+						<Item Name="Initialize Backup to File.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Backup/Initialize Backup to File.vi"/>
+						<Item Name="Backup to File.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Backup/Backup to File.vi"/>
+						<Item Name="Backup.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Backup/Backup.lvclass"/>
+					</Item>
+					<Item Name="SQL formatting" Type="Folder">
+						<Item Name="Format VALUES (,,,).vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL formatting/Format VALUES (,,,).vi"/>
+						<Item Name="(,,,) FROM.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL formatting/(,,,) FROM.vi"/>
+					</Item>
+					<Item Name="subVIs" Type="Folder">
+						<Item Name="Tag on String Name.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL Statement/Tag on String Name.vi"/>
+						<Item Name="Error Codes.ctl" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/Error Codes.ctl"/>
+						<Item Name="Pointer-to-C-String to String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/Pointer-to-C-String to String.vi"/>
+						<Item Name="SQLite Error.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/SQLite Error.vi"/>
+						<Item Name="Format Error.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/Format Error.vi"/>
+						<Item Name="Create String pointer.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/Create String pointer.vi"/>
+						<Item Name="String from String pointer.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Private/String from String pointer.vi"/>
+					</Item>
+					<Item Name="Debug" Type="Folder">
+						<Item Name="Test.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Debug/Test.vi"/>
+					</Item>
+					<Item Name="Execute SQL (Poly).vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL Connection/Execute SQL (Poly).vi"/>
+					<Item Name="JDP Utility.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/JDP Science Common Utilities/JDP Utility.lvlib"/>
+					<Item Name="JDP Timestamp.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/JDP Science Common Utilities/Timestamp/JDP Timestamp.lvlib"/>
+					<Item Name="Connection.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL Connection/Connection.lvclass"/>
+					<Item Name="SQL Statement.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/SQL Statement/SQL Statement.lvclass"/>
+					<Item Name="Transaction.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/user.lib/John_Lib/SQLite Library/Transaction Helpers/Transaction.lvlib"/>
+					<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
+					<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/VariantDataType/VariantType.lvlib"/>
+					<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+					<Item Name="Application Directory.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Application Directory.vi"/>
+					<Item Name="Command Line String To Path.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/AdvancedString/Command Line String To Path.vi"/>
+					<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/AdvancedString/Path To Command Line String.vi"/>
+					<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
+					<Item Name="Bit-array To Byte-array.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/pictutil.llb/Bit-array To Byte-array.vi"/>
+					<Item Name="Create Mask By Alpha.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/picture.llb/Create Mask By Alpha.vi"/>
+					<Item Name="Directory of Top Level VI.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/jpeg.llb/Directory of Top Level VI.vi"/>
+					<Item Name="Check Path.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/jpeg.llb/Check Path.vi"/>
+					<Item Name="Read PNG File.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/png.llb/Read PNG File.vi"/>
+				</Item>
+				<Item Name="Error to OK or NG.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/ErrorHandle/Error to OK or NG.vi"/>
+				<Item Name="Get Valid String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/Get Valid String.vi"/>
+				<Item Name="0-1 To OK-NG.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/0-1 To OK-NG.vi"/>
+				<Item Name="openg_application_control.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/openg_application_control.lvlib"/>
+				<Item Name="openg_file.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/openg_file.lvlib"/>
+				<Item Name="openg_error.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/error/error.llb/openg_error.lvlib"/>
+				<Item Name="openg_array.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/openg_array.lvlib"/>
+				<Item Name="openg_variant.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/openg_variant.lvlib"/>
+				<Item Name="Parameters Select.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/SQLite_API/Parameters Select.vi"/>
+				<Item Name="AMC_FW.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/AMC_FW/AMC_FW.lvlib"/>
+				<Item Name="openg_numeric__ogtk.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/numeric/numeric.llb/openg_numeric__ogtk.lvlib"/>
+				<Item Name="Random Number - Within Range__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/numeric/numeric.llb/Random Number - Within Range__ogtk.vi"/>
+				<Item Name="openg_time.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/time/time.llb/openg_time.lvlib"/>
+				<Item Name="VIName.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/VIName.vi"/>
+				<Item Name="Delete Header from NoteID.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/OPCUA/Delete Header from NoteID.vi"/>
+				<Item Name="Delete Dot-Double first end.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/OPCUA/Delete Dot-Double first end.vi"/>
+				<Item Name="Set Calling VI Wnd Topmost &amp; Active.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Windows/Set Calling VI Wnd Topmost &amp; Active.vi"/>
+				<Item Name="GUID 16.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/GUID 16.vi"/>
 			</Item>
 			<Item Name="AF Debug.lvlib" Type="Library" URL="/&lt;resource&gt;/AFDebug/AF Debug.lvlib"/>
 			<Item Name="systemLogging.dll" Type="Document" URL="systemLogging.dll">
@@ -173,6 +300,15 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="System.Windows.Forms" Type="Document" URL="System.Windows.Forms">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="user32" Type="VI" URL="user32">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="System.Drawing" Type="Document" URL="System.Drawing">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="mscorlib" Type="VI" URL="mscorlib">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
