@@ -289,6 +289,7 @@
 				<Item Name="Delete Dot-Double first end.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/OPCUA/Delete Dot-Double first end.vi"/>
 				<Item Name="Set Calling VI Wnd Topmost &amp; Active.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Windows/Set Calling VI Wnd Topmost &amp; Active.vi"/>
 				<Item Name="GUID 16.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/GUID 16.vi"/>
+				<Item Name="Error Dealy.vim" Type="VI" URL="/&lt;userlib&gt;/John_Lib/ErrorHandle/Error Dealy.vim"/>
 			</Item>
 			<Item Name="AF Debug.lvlib" Type="Library" URL="/&lt;resource&gt;/AFDebug/AF Debug.lvlib"/>
 			<Item Name="systemLogging.dll" Type="Document" URL="systemLogging.dll">
