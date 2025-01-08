@@ -71,7 +71,6 @@
 				<Item Name="Casting Utility For Actors.vim" Type="VI" URL="/&lt;vilib&gt;/ActorFramework/Actor/Casting Utility For Actors.vim"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
-				<Item Name="JSONtext.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JSONtext/JSONtext.lvlib"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="lveventtype.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/lveventtype.ctl"/>
 				<Item Name="Acquire Input Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/Acquire Input Data.vi"/>
@@ -131,10 +130,6 @@
 				<Item Name="Create NI GUID.vi" Type="VI" URL="/&lt;vilib&gt;/string/Create NI GUID.vi"/>
 				<Item Name="JSONtext LVClass Serializer.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/JDP Science/JSONtext/LVClass Serializer/JSONtext LVClass Serializer.lvclass"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
-				<Item Name="JDP Utility.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/JDP Utility.lvlib"/>
-				<Item Name="JDP Timestamp.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Timestamp/JDP Timestamp.lvlib"/>
-				<Item Name="Base64 Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Base64/Base64 Support.lvlib"/>
-				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="NI_Database_API.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/database/NI_Database_API.lvlib"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
@@ -202,6 +197,11 @@
 				<Item Name="LVStringsAndValuesArrayTypeDef_U16.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVStringsAndValuesArrayTypeDef_U16.ctl"/>
 				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 				<Item Name="Parse State Queue_2024__jki_lib_state_machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Parse State Queue_2024__jki_lib_state_machine.vi"/>
+				<Item Name="JSONtext.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JSONtext/JSONtext.lvlib"/>
+				<Item Name="JDP Utility.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/JDP Utility.lvlib"/>
+				<Item Name="Base64 Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Base64/Base64 Support.lvlib"/>
+				<Item Name="JDP Timestamp.lvlib" Type="Library" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Timestamp/JDP Timestamp.lvlib"/>
+				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 			</Item>
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Get All Control Ref.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Control/Get All Control Ref.vi"/>
@@ -216,7 +216,6 @@
 				<Item Name="Queue_Self.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/Queue_Self/Queue_Self.lvlib"/>
 				<Item Name="Save Front panel to Image.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/File/Save Front panel to Image.vi"/>
 				<Item Name="Start Window Drag.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Windows/Start Window Drag.vi"/>
-				<Item Name="JSON Pretty Printer.lvlib" Type="Library" URL="/&lt;userlib&gt;/FTools/JSON Pretty Printer/JSON Pretty Printer.lvlib"/>
 				<Item Name="DataBase_SQL.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/DataBase_SQL/DataBase_SQL.lvclass"/>
 				<Item Name="SQLite_API.lvclass" Type="LVClass" URL="/&lt;userlib&gt;/John_Lib/DataBase/SQLite_API/SQLite_API.lvclass"/>
 				<Item Name="StringToArray_Sushu.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/StringToArray_Sushu.vi"/>
@@ -261,9 +260,9 @@
 					<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
 					<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/VariantDataType/VariantType.lvlib"/>
 					<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
-					<Item Name="Application Directory.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Application Directory.vi"/>
-					<Item Name="Command Line String To Path.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/AdvancedString/Command Line String To Path.vi"/>
 					<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/AdvancedString/Path To Command Line String.vi"/>
+					<Item Name="Command Line String To Path.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/AdvancedString/Command Line String To Path.vi"/>
+					<Item Name="Application Directory.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Application Directory.vi"/>
 					<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
 					<Item Name="Bit-array To Byte-array.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/pictutil.llb/Bit-array To Byte-array.vi"/>
 					<Item Name="Create Mask By Alpha.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/DataBase/drjdpowell SQLite/drjdpowell SQLite.lvlibp/1abvi3w/vi.lib/picture/picture.llb/Create Mask By Alpha.vi"/>
@@ -290,6 +289,7 @@
 				<Item Name="Set Calling VI Wnd Topmost &amp; Active.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/Windows/Set Calling VI Wnd Topmost &amp; Active.vi"/>
 				<Item Name="GUID 16.vi" Type="VI" URL="/&lt;userlib&gt;/John_Lib/String/GUID 16.vi"/>
 				<Item Name="Error Dealy.vim" Type="VI" URL="/&lt;userlib&gt;/John_Lib/ErrorHandle/Error Dealy.vim"/>
+				<Item Name="JSON Pretty Printer.lvlib" Type="Library" URL="/&lt;userlib&gt;/FTools/JSON Pretty Printer/JSON Pretty Printer.lvlib"/>
 			</Item>
 			<Item Name="AF Debug.lvlib" Type="Library" URL="/&lt;resource&gt;/AFDebug/AF Debug.lvlib"/>
 			<Item Name="systemLogging.dll" Type="Document" URL="systemLogging.dll">
